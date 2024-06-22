@@ -1,7 +1,4 @@
 ---
-- name: include vars
-  include_tasks: vars_global.yml
-  
 - name: Write hostname
   hosts: routers  
   tasks:
