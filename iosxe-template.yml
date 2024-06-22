@@ -1,9 +1,8 @@
----
-  vars:
-    ntp_servers: '1.1.1.1'
-    
+---    
 - name: Write hostname
   hosts: routers
+  vars:
+    ntp_servers: '1.1.1.1'
   tasks:
   - name: write hostname using jinja2
     ansible.builtin.template:
