@@ -1,7 +1,8 @@
 ---
-- name: base config templat
+- name: Write hostname
   hosts: routers
   tasks:
-    - template:
-      src: template_global.j2
-      dest: ./configs/{{ inventory_hostname }}_config.txt
+  - name: write hostname using jinja2
+    ansible.builtin.template:
+       src: template_global.j2
+       dest: ./configs/{{ inventory_hostname }}_config.txt
