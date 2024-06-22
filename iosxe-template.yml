@@ -1,8 +1,7 @@
 ---    
 - name: Write hostname
   hosts: routers
-  vars:
-    ntp_servers: '1.1.1.1'
+  {{ lookup('file','vars_global.yaml') | from_yaml }}
   tasks:
   - name: write hostname using jinja2
     ansible.builtin.template:
