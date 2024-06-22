@@ -6,3 +6,4 @@
     ansible.builtin.template:
        src: template_global.j2
        dest: ./config/{{ inventory_hostname }}.txt
+    delegate_to: localhost
