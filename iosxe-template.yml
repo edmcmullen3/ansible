@@ -1,4 +1,7 @@
 ---
+  vars:
+    ntp_servers: 1.1.1.1'
+    
 - name: Write hostname
   hosts: routers
   tasks:
