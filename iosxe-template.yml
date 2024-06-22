@@ -7,4 +7,4 @@
   - name: write hostname using jinja2
     ansible.builtin.template:
        src: template_global.j2
-       dest: ./configs/{{ inventory_hostname }}_config.txt
+       dest: {{ inventory_hostname }}_config.txt
