@@ -1,18 +1,8 @@
 - name: "more testing"
   hosts: routers
-  gather_facts: yes
 
   tasks:
-    - name: Interfaces status
-      cisco.ios.ios_banner:
-        banner: login
-        text: banner from ansible
-        state: present
-        
-    - name: Merge provided configuration with device configuration
-      cisco.ios.ios_interfaces:
-        config:
-          - name: GigabitEthernet2
-            description: Configured from github
-            enabled: true
+    - name: config from template
+      cli_config:
+        config: "{{ lookup('template', 'templates/template_global.j2') }}"
            
