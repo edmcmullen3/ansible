@@ -1,7 +1,9 @@
----    
-- name: Write hostname
-  hosts: routers
+---
+- name: include vars
   ansible.builtin.include_vars: "vars_global.yaml"
+  
+- name: Write hostname
+  hosts: routers  
   tasks:
   - name: write hostname using jinja2
     ansible.builtin.template:
