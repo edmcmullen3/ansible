@@ -1,0 +1,7 @@
+---
+- name: base config templat
+  hosts: routers
+  tasks:
+    - template:
+      src: template_global.j2
+      dest: ./configs/{{ inventory_hostname }}_config.txt
