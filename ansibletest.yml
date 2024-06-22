@@ -13,6 +13,6 @@
       cisco.ios.ios_interfaces:
         config:
           - name: GigabitEthernet2
-            description: Configured and Merged by Ansible Network
+            description: Configured from github
             enabled: true
            
