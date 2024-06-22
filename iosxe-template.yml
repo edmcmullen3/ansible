@@ -1,7 +1,7 @@
 ---    
 - name: Write hostname
   hosts: routers
-  {{ lookup('file','vars_global.yaml') | from_yaml }}
+  ansible.builtin.include_vars: "vars_global.yaml"
   tasks:
   - name: write hostname using jinja2
     ansible.builtin.template:
