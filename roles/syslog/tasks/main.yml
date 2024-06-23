@@ -1,4 +1,5 @@
 - name: write syslog using jinja2
   ansible.builtin.template:
       src: templates/syslog.j2
-      dest: /tmp/syslog
+      dest: config/{{inventory_hostname}}/syslog.cfg
+
