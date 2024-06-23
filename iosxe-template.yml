@@ -6,11 +6,6 @@
     cisco.ios.ios_ntp_global:
       config:
         servers:
-      state: replaced
-    
-  - name: ntp
-    cisco.ios.ios_ntp_global:
-      config:
-        servers:
           - server: "{{ item }}"
+      state: replaced
     loop: "{{ ntp_servers }}"
