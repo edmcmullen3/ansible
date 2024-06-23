@@ -4,6 +4,8 @@
   tasks:
   - name: ntp
     cisco.ios.ios_ntp_global:
+      config:
+        servers:
       state: replaced
     
   - name: ntp
