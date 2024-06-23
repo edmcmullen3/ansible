@@ -2,3 +2,4 @@
 - hosts: routers
   roles:
     - ntp
+    - syslog
