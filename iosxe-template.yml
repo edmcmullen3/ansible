@@ -1,7 +1,6 @@
 ---
 - name: Apply the provided configuration
   hosts: routers
-  state: merged
   tasks:
   - name: ntp
     cisco.ios.ios_ntp_global:
