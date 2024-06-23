@@ -10,4 +10,4 @@
     loop:
       - 2.2.2.2
       - 3.3.3.3
-  state: replaced
+    state: merged
