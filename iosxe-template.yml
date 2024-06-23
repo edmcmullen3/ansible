@@ -6,8 +6,8 @@
     cisco.ios.ios_ntp_global:
       config:
         servers:
-          - server: '{{ item }}'
-            loop:
-              - 2.2.2.2
-              - 3.3.3.3
+          - server: "{{ item }}"
+        loop:
+          - 2.2.2.2
+          - 3.3.3.3
       state: merged
