@@ -4,9 +4,10 @@
     - ntp
     - syslog
 
-- name: Assemble configuration
-  assemble:
-    src: "config/parts/{{inventory_hostname}}"
-    dest: "config/{{inventory_hostname}}/compiled.config"
-    regexp: "^.*"
-  delegate_to: localhost
+  tasks:
+  - name: Assemble configuration
+    assemble:
+      src: "config/parts/{{inventory_hostname}}"
+      dest: "config/{{inventory_hostname}}/compiled.config"
+      regexp: "^.*"
+    delegate_to: localhost
