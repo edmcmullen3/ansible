@@ -4,6 +4,10 @@
   tasks:
   - name: ntp
     cisco.ios.ios_ntp_global:
+      state: replaced
+    
+  - name: ntp
+    cisco.ios.ios_ntp_global:
       config:
         servers:
           - server: "{{ item }}"
