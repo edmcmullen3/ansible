@@ -1,0 +1,8 @@
+---
+- name: Write syslog
+  hosts: routers
+  tasks:
+  - name: write syslog using jinja2
+    ansible.builtin.template:
+       src: templates/syslog.j2
+       dest: /tmp/syslog
