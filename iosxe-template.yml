@@ -3,8 +3,8 @@
   hosts: routers
   tasks:
   - name: ntp
+    state: replaced
     cisco.ios.ios_ntp_global:
-      state: replaced
       config:
         servers:
           - server: "{{ item }}"
