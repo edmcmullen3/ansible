@@ -1,11 +1,11 @@
 - name: Create a directory if it does not exist
   ansible.builtin.file:
-    path: config/{{inventory_hostname}}
+    path: config/parts/{{inventory_hostname}}
     state: directory
     mode: '0755'
 
 - name: write syslog using jinja2
   ansible.builtin.template:
       src: templates/syslog.j2
-      dest: config/{{inventory_hostname}}/syslog.cfg
+      dest: config/parts/{{inventory_hostname}}/syslog.cfg
 
