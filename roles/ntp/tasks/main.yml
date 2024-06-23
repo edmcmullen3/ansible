@@ -1,11 +1,7 @@
 ---
-- name: Apply the provided configuration
-  hosts: routers
-  tasks:
-  - name: ntp
-    cisco.ios.ios_ntp_global:
-      config:
-        servers:
-          - server: "{{ item }}"
-      state: replaced
-    loop: "{{ ntp_servers }}"
+- name: ntp
+  cisco.ios.ios_ntp_global:
+    config:
+      servers:
+        - server: "{{ item }}"
+  loop: "{{ ntp_servers }}"
