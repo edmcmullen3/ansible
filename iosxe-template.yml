@@ -7,3 +7,21 @@
        src: template_global.j2
        dest: ./config/{{ inventory_hostname }}.txt
     delegate_to: localhost
+    
+    - name: Create new users
+      cisco.ios.ios_ntp_global:
+      
+      user:
+        name: '{{ item }}'
+        state: present
+
+      loop:
+        
+
+- name: Apply the provided configuration
+  cisco.ios.ios_ntp_global:
+    config:
+      servers:
+        - server: '{{ item }}'
+      loop: "{{ ntp_servers }}"
+    state: merged
