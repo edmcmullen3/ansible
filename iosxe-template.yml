@@ -1,13 +1,14 @@
 ---
-- hosts: routers
+- name: base
+  hosts: routers
   roles:
     - ntp
     - syslog
 
   tasks:
-  - name: Assemble configuration
-    assemble:
-      src: "config/parts/{{inventory_hostname}}"
-      dest: "config/{{inventory_hostname}}/compiled.config"
-      regexp: "^.*"
-    delegate_to: localhost
+    - name: Assemble configuration
+      assemble:
+        src: "config/parts/{{inventory_hostname}}"
+        dest: "config/{{inventory_hostname}}/compiled.config"
+        regexp: "^.*"
+      delegate_to: localhost
