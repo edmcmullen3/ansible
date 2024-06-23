@@ -7,7 +7,4 @@
       config:
         servers:
           - server: "{{ item }}"
-    state: merged
-    loop:
-      - 2.2.2.2
-      - 3.3.3.3
+    loop: "{{ ntp_servers }}"
