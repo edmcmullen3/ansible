@@ -1,8 +1,0 @@
-- name: "more testing"
-  hosts: routers
-
-  tasks:
-    - name: config from template
-      cli_config:
-        config: "{{ lookup('template', 'templates/template_global.j2') }}"
-           
