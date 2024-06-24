@@ -1,7 +1,7 @@
 ---
 
 - name: get ntp servers from config
-  set_fact: ntp_server_lines="{{ nsible_net_config | regex_findall('^ntp server (\S+)', multiline=True) }}"
+  set_fact: ntp_server_lines="{{ ansible_net_config | regex_findall('^ntp server (\S+)', multiline=True) }}"
 
 - name: remove ntp servers
   ios_config:
