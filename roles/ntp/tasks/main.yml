@@ -11,6 +11,7 @@
   ios_config:
     lines:
       - "no ntp server {{ item }}"
+    when: item not in ntp_servers
   loop: "{{ ntp_server_lines }}"
 
 - name: ntp
