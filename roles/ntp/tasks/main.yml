@@ -1,4 +1,14 @@
 ---
+
+- name: get ntp servers from config
+  set_fact: ntp_server_lines="{{ nsible_net_config | regex_findall('^ntp server (\S+)', multiline=True) }}"
+
+- name: remove ntp servers
+  ios_config:
+    lines:
+      - "no {{ item }}"
+  loop: "{{ ntp_server_lines }}"
+
 - name: ntp
   cisco.ios.ios_ntp_global:
     config:
