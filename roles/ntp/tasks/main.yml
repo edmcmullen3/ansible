@@ -1,4 +1,8 @@
 ---
+- name: Gather only the config and default facts
+  cisco.ios.ios_facts:
+    gather_subset:
+      - config
 
 - name: get ntp servers from config
   set_fact: ntp_server_lines="{{ ansible_net_config | regex_findall('^ntp server (\S+)', multiline=True) }}"
