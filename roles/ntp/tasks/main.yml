@@ -10,7 +10,7 @@
 - name: remove ntp servers
   ios_config:
     lines:
-      - "no {{ item }}"
+      - "no ntp server {{ item }}"
   loop: "{{ ntp_server_lines }}"
 
 - name: ntp
