@@ -11,6 +11,10 @@
         gather_subset:
           - config
 
+    - name: config facts
+      ansible.builtin.debug:
+        msg: {{ ansible_net_config }}
+
     - name: Assemble configuration
       assemble:
         src: "config/parts/{{inventory_hostname}}"
